@@ -1,0 +1,12 @@
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/bin/Debug/net10.0/Contracts.deps.json
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/bin/Debug/net10.0/Contracts.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/bin/Debug/net10.0/Contracts.pdb
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.AssemblyInfoInputs.cache
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.AssemblyInfo.cs
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.csproj.CoreCompileInputs.cache
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.sourcelink.json
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/refint/Contracts.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/Contracts.pdb
+/workspaces/dotnet-microservice-prac/Carauction/src/Contracts/obj/Debug/net10.0/ref/Contracts.dll

@@ -185,3 +185,11 @@
 /workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Contracts.dll
 /workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Contracts.pdb
 /workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/MassTransit.EntityFrameworkCoreIntegration.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll

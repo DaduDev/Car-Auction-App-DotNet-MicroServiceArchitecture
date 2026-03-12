@@ -15,5 +15,6 @@
     <PackageReference Include="Scalar.AspNetCore" Version="2.12.36"/>
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.0"/>
     <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.1.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0"/>
   </ItemGroup>
 </Project>

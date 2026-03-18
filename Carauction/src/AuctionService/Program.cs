@@ -1,3 +1,4 @@
+using AuctionService.Consumers;
 using AuctionService.Data;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -27,6 +28,9 @@ builder.Services.AddDbContext<AuctionDbContext>(options =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddMassTransit(x =>
 {
+
+    x.AddConsumersFromNamespaceContaining<AuctionFinishedConsumer>();
+    x.AddConsumersFromNamespaceContaining<BidPlacedConsumer>();
 
     x.AddEntityFrameworkOutbox<AuctionDbContext>(o =>
     {

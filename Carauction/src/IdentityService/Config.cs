@@ -27,6 +27,19 @@ public static class Config
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = { new Secret("NotASecret".Sha256())},
                 AllowedScopes = {"auctionApp", "openid", "profile" }
+            },
+
+            new Client
+            {
+                ClientId = "frontend",
+                ClientName = "Frontend Client",
+                ClientSecrets = {new Secret("secret".Sha256())},
+                AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
+                RequirePkce = false,
+                RedirectUris = {"http://localhost:3000/api/auth/callback/id-server"},
+                AllowOfflineAccess = true,
+                AllowedScopes = {"auctionApp", "openid", "profile" },
+                AccessTokenLifetime = 3600 * 24 * 30
             }
         };
 }

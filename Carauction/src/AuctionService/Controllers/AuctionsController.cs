@@ -45,7 +45,7 @@ public class AuctionsController : ControllerBase
     public async Task<ActionResult<AuctionDto>> GetAuctionById(Guid id)
     {
         var auction = await dbContext.Auctions.Include(x => x.Item).FirstOrDefaultAsync(c => c.Id == id);
-        if(auction == null) return BadRequest();
+        if(auction == null) return NotFound();
         return Ok(mapper.Map<AuctionDto>(auction));
     }
 

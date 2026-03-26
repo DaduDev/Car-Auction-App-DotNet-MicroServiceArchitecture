@@ -24,11 +24,25 @@ public class DbInitializer
                 .FromConnectionString(app.Configuration.GetConnectionString("MongoDbConnection")));
         });
 
-        await DB.Index<Item>()
-            .Key(x => x.Make, KeyType.Text)
-            .Key(x => x.Model, KeyType.Text)
-            .Key(x => x.Color, KeyType.Text)
-            .CreateAsync();
+        try
+        {
+            await DB.Index<Item>()
+                .Key(x => x.Make, KeyType.Text)
+                .Key(x => x.Model, KeyType.Text)
+                .Key(x => x.Color, KeyType.Text)
+                .Option(o => o.Background = false)
+                .CreateAsync();
+        }
+        catch (MongoCommandException ex) when (ex.CodeName == "IndexOptionsConflict" || ex.CodeName == "IndexKeySpecsConflict")
+        {
+            await DB.Index<Item>().DropAllAsync();
+            await DB.Index<Item>()
+                .Key(x => x.Make, KeyType.Text)
+                .Key(x => x.Model, KeyType.Text)
+                .Key(x => x.Color, KeyType.Text)
+                .Option(o => o.Background = false)
+                .CreateAsync();
+        }
 
         var count = await DB.CountAsync<Item>();
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KBOXYsXISwc=",
+  "dgSpecHash": "oihWw14kel0=",
   "success": true,
   "projectFilePath": "/workspaces/dotnet-microservice-prac/Carauction/src/BiddingService/BiddingService.csproj",
   "expectedPackageFiles": [
@@ -28,5 +28,18 @@
     "/home/codespace/.nuget/packages/system.identitymodel.tokens.jwt/8.0.1/system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512",
     "/home/codespace/.nuget/packages/zstdsharp.port/0.7.3/zstdsharp.port.0.7.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
+      "projectPath": "/workspaces/dotnet-microservice-prac/Carauction/src/BiddingService/BiddingService.csproj",
+      "warningLevel": 1,
+      "filePath": "/workspaces/dotnet-microservice-prac/Carauction/src/BiddingService/BiddingService.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

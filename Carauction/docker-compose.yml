@@ -108,6 +108,16 @@ services:
     ports:
       - 5004:80
 
+  frontend-svc:
+    image: dadudev/frontend-svc:latest
+    build:
+      context: .
+      dockerfile: src/FrontendService/Dockerfile
+    ports:
+      - 3000:80
+    depends_on:
+      - gateway-svc
+
 volumes:
   pgdata:
   mongodata:

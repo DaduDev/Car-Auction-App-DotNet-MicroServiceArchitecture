@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rrJ+uPWhMpk=",
+  "dgSpecHash": "gv05rDZ8NG4=",
   "success": true,
   "projectFilePath": "/workspaces/dotnet-microservice-prac/Carauction/src/GatewayService/GatewayService.csproj",
   "expectedPackageFiles": [

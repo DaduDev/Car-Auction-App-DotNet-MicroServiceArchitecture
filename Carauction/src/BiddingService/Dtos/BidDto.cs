@@ -1,13 +1,10 @@
-using BiddingService.Models;
-using MongoDB.Entities;
+namespace BiddingService;
 
-namespace BiddingService.Dtos;
-
-public class BidDto : Entity
+public class BidDto
 {
-    public string AuctionId {get; set;}
+    public string AuctionId { get; set; }
     public string Bidder { get; set; }
-    public DateTime BidTime { get; set; } = DateTime.Now;
+    public DateTime BidTime { get; set; } 
     public int Amount { get; set; }
-    public BidStatus BidStatus { get; set; }
+    public string BidStatus { get; set; }
 }

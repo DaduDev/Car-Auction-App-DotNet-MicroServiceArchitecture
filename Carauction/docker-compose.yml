@@ -56,11 +56,17 @@ services:
       dockerfile: src/AuctionService/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__DefaultConnection=server=postgres;Port=5432;Database=auctions;Username=postgres;Password=dadapeer888
       - IdentityServer__Authority=http://identity-svc
+      - RabbitMq__Host=rabbitmq
+      - Kestrel__Endpoints__WebApi__Protocols=Http1
+      - Kestrel__Endpoints__WebApi__Url=http://+:80
+      - Kestrel__Endpoints__Grpc__Protocols=Http2
+      - Kestrel__Endpoints__Grpc__Url=http://+:7777
+
     ports:
       - 5014:80
+      - 7777:7777
     depends_on:
       postgres:
         condition: service_healthy
@@ -121,6 +127,25 @@ services:
     depends_on:
       - gateway-svc
       - identity-svc
+  
+  bid-svc:
+    image: dadudev/bid-svc:latest
+    build:
+      context: .
+      dockerfile: src/BiddingService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__BidDbConnection=mongodb://root:dadapeer888@mongodb:27017
+      - IdentityServer__Authority=http://identity-svc
+      - GrpcAuction=http://auction-svc:7777
+    ports:
+      - 5137:80
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
 
 volumes:
   pgdata:

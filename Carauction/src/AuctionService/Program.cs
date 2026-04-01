@@ -1,3 +1,4 @@
+using AuctionService;
 using AuctionService.Consumers;
 using AuctionService.Data;
 using MassTransit;
@@ -41,7 +42,7 @@ builder.Services.AddMassTransit(x =>
     x.UsingRabbitMq((context, cfg) =>
         {
             cfg.AutoStart = true;
-            cfg.Host("rabbitmq", "/", h =>
+            cfg.Host(builder.Configuration["RabbitMq:Host"] ?? "localhost", "/", h =>
             {
                 h.Username("dev");
                 h.Password("dev");
@@ -53,6 +54,7 @@ builder.Services.AddMassTransit(x =>
         });
 });
 
+builder.Services.AddGrpc();
 
 var app = builder.Build();
 
@@ -65,6 +67,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapGrpcService<GrpcAuctionService>();
 
 try
 {

@@ -193,3 +193,10 @@
 /workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/obj/Debug/net10.0/AuctionService.pdb
 /workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/obj/Debug/net10.0/AuctionService.genruntimeconfig.cache
 /workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/obj/Debug/net10.0/ref/AuctionService.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Google.Protobuf.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Grpc.AspNetCore.Server.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Grpc.AspNetCore.Server.ClientFactory.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Grpc.Core.Api.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Grpc.Net.Client.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Grpc.Net.ClientFactory.dll
+/workspaces/dotnet-microservice-prac/Carauction/src/AuctionService/bin/Debug/net10.0/Grpc.Net.Common.dll

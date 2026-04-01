@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "AutoMapper/12.0.1": {
+      "AutoMapper/12.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/AutoMapper.dll": {}
@@ -11,10 +11,10 @@
           "lib/netstandard2.1/AutoMapper.dll": {}
         }
       },
-      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
         "type": "package",
         "dependencies": {
-          "AutoMapper": "[12.0.1]"
+          "AutoMapper": "12.0.0"
         },
         "compile": {
           "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
@@ -32,41 +32,107 @@
           "lib/net5.0/DnsClient.dll": {}
         }
       },
-      "MassTransit/8.1.0": {
+      "Google.Protobuf/3.34.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.76.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.76.0": {
         "type": "package",
         "dependencies": {
-          "MassTransit.Abstractions": "8.1.0"
+          "Grpc.Net.Common": "2.76.0"
         },
         "compile": {
-          "lib/net7.0/MassTransit.dll": {}
+          "lib/net10.0/Grpc.Net.Client.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net7.0/MassTransit.dll": {}
+          "lib/net10.0/Grpc.Net.Client.dll": {
+            "related": ".pdb"
+          }
         }
       },
-      "MassTransit.Abstractions/8.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/MassTransit.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/MassTransit.Abstractions.dll": {}
-        }
-      },
-      "MassTransit.RabbitMQ/8.1.0": {
+      "Grpc.Net.Common/2.76.0": {
         "type": "package",
         "dependencies": {
-          "MassTransit": "8.1.0",
-          "RabbitMQ.Client": "6.5.0"
+          "Grpc.Core.Api": "2.76.0"
         },
         "compile": {
-          "lib/net7.0/MassTransit.RabbitMqTransport.dll": {}
+          "lib/net10.0/Grpc.Net.Common.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net7.0/MassTransit.RabbitMqTransport.dll": {}
+          "lib/net10.0/Grpc.Net.Common.dll": {
+            "related": ".pdb"
+          }
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.3": {
+      "Grpc.Tools/2.80.0": {
+        "type": "package",
+        "build": {
+          "build/Grpc.Tools.props": {},
+          "build/Grpc.Tools.targets": {}
+        }
+      },
+      "MassTransit/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit.Abstractions": "8.0.1",
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MassTransit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MassTransit.dll": {}
+        }
+      },
+      "MassTransit.Abstractions/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MassTransit.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MassTransit.Abstractions.dll": {}
+        }
+      },
+      "MassTransit.RabbitMQ/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MassTransit": "8.0.1",
+          "RabbitMQ.Client": "6.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.0.1"
@@ -81,22 +147,13 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.OpenApi/10.0.0": {
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "2.0.0"
-        },
         "compile": {
-          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
-          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ],
-        "build": {
-          "build/Microsoft.AspNetCore.OpenApi.targets": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
       "Microsoft.IdentityModel.Abstractions/8.0.1": {
@@ -169,19 +226,6 @@
           "lib/net9.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
-      "Microsoft.OpenApi/2.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.OpenApi.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.OpenApi.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
       "MongoDB.Bson/3.2.0": {
         "type": "package",
         "compile": {
@@ -219,7 +263,7 @@
           "lib/netstandard2.1/MongoDB.Entities.dll": {}
         }
       },
-      "RabbitMQ.Client/6.5.0": {
+      "RabbitMQ.Client/6.2.4": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/RabbitMQ.Client.dll": {}
@@ -281,29 +325,29 @@
     }
   },
   "libraries": {
-    "AutoMapper/12.0.1": {
-      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+    "AutoMapper/12.0.0": {
+      "sha512": "0Rmg0zI5AFu1O/y//o9VGyhxKjhggWpk9mOA1tp0DEVx40c61bs+lnQv+0jUq8XbniF7FKgIVvI1perqiMtLrA==",
       "type": "package",
-      "path": "automapper/12.0.1",
+      "path": "automapper/12.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "automapper.12.0.1.nupkg.sha512",
+        "automapper.12.0.0.nupkg.sha512",
         "automapper.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll"
       ]
     },
-    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
-      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+      "sha512": "XCJ4E3oKrbRl1qY9Mr+7uyC0xZj1+bqQjmQRWTiTKiVuuXTny+7YFWHi20tPjwkMukLbicN6yGlDy5PZ4wyi1w==",
       "type": "package",
-      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
@@ -327,64 +371,183 @@
         "lib/netstandard2.1/DnsClient.dll"
       ]
     },
-    "MassTransit/8.1.0": {
-      "sha512": "tyjHDdyjI9hSu1mfGEmA5a/IAro5tL7l2+HKAmbuc1+MT4QAQ3epmeVG5QOJ92C2wf2xTAfx1FmEXiZfg0rsXA==",
+    "Google.Protobuf/3.34.1": {
+      "sha512": "212vdYxRuVopGE5bess6Jg5oXWyizA6hcLPTI7G+qA4PthQEvfeof3njT+7VSY5v/+O0P22xTydiP5fSJJpGEA==",
       "type": "package",
-      "path": "masstransit/8.1.0",
+      "path": "google.protobuf/3.34.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "NuGet.README.md",
-        "lib/net462/MassTransit.dll",
-        "lib/net6.0/MassTransit.dll",
-        "lib/net7.0/MassTransit.dll",
+        "google.protobuf.3.34.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb"
+      ]
+    },
+    "Grpc.Core.Api/2.76.0": {
+      "sha512": "cSxC2tdnFdXXuBgIn1pjc4YBx7LXTCp4M0qn+SMBS35VWZY+cEQYLWTBDDhdBH1HzU7BV+ncVZlniGQHMpRJKQ==",
+      "type": "package",
+      "path": "grpc.core.api/2.76.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.core.api.2.76.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net462/Grpc.Core.Api.dll",
+        "lib/net462/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client/2.76.0": {
+      "sha512": "K1oldmqw2+Gn69nGRzZLhqSiUZwelX1GrBu/cUl9wNf1C0uB61vFS6JcxUUv9P8VoUJhFsmV44JA6lI2EUt4xw==",
+      "type": "package",
+      "path": "grpc.net.client/2.76.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.2.76.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net10.0/Grpc.Net.Client.dll",
+        "lib/net10.0/Grpc.Net.Client.pdb",
+        "lib/net462/Grpc.Net.Client.dll",
+        "lib/net462/Grpc.Net.Client.pdb",
+        "lib/net8.0/Grpc.Net.Client.dll",
+        "lib/net8.0/Grpc.Net.Client.pdb",
+        "lib/net9.0/Grpc.Net.Client.dll",
+        "lib/net9.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.76.0": {
+      "sha512": "bZpiMVYgvpB44/wBh1RotrkqC7bg2FOasLri2GhR3hMKyzsiTxCoDE49YjPrJeFc4RW0wS8u+EInI09sjxVFRA==",
+      "type": "package",
+      "path": "grpc.net.common/2.76.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.76.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net10.0/Grpc.Net.Common.dll",
+        "lib/net10.0/Grpc.Net.Common.pdb",
+        "lib/net8.0/Grpc.Net.Common.dll",
+        "lib/net8.0/Grpc.Net.Common.pdb",
+        "lib/net9.0/Grpc.Net.Common.dll",
+        "lib/net9.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Tools/2.80.0": {
+      "sha512": "NS1AxwVZnrdbBoMf5L5ruGjBjoLBej9avhqxWNsgfu2GU6FhpxEVJOwLJsdljlDCjvquJiAH2zf/WodIWMvf2w==",
+      "type": "package",
+      "path": "grpc.tools/2.80.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Grpc.Tools.props",
+        "build/Grpc.Tools.targets",
+        "build/_grpc/Grpc.CSharp.xml",
+        "build/_grpc/_Grpc.Tools.props",
+        "build/_grpc/_Grpc.Tools.targets",
+        "build/_protobuf/Google.Protobuf.Tools.props",
+        "build/_protobuf/Google.Protobuf.Tools.targets",
+        "build/_protobuf/Protobuf.CSharp.xml",
+        "build/_protobuf/net45/Protobuf.MSBuild.dll",
+        "build/_protobuf/net45/Protobuf.MSBuild.pdb",
+        "build/_protobuf/netstandard1.3/Protobuf.MSBuild.dll",
+        "build/_protobuf/netstandard1.3/Protobuf.MSBuild.pdb",
+        "build/native/include/google/protobuf/any.proto",
+        "build/native/include/google/protobuf/api.proto",
+        "build/native/include/google/protobuf/descriptor.proto",
+        "build/native/include/google/protobuf/duration.proto",
+        "build/native/include/google/protobuf/empty.proto",
+        "build/native/include/google/protobuf/field_mask.proto",
+        "build/native/include/google/protobuf/source_context.proto",
+        "build/native/include/google/protobuf/struct.proto",
+        "build/native/include/google/protobuf/timestamp.proto",
+        "build/native/include/google/protobuf/type.proto",
+        "build/native/include/google/protobuf/wrappers.proto",
+        "grpc.tools.2.80.0.nupkg.sha512",
+        "grpc.tools.nuspec",
+        "packageIcon.png",
+        "tools/linux_arm64/grpc_csharp_plugin",
+        "tools/linux_arm64/protoc",
+        "tools/linux_x64/grpc_csharp_plugin",
+        "tools/linux_x64/protoc",
+        "tools/linux_x86/grpc_csharp_plugin",
+        "tools/linux_x86/protoc",
+        "tools/macosx_x64/grpc_csharp_plugin",
+        "tools/macosx_x64/protoc",
+        "tools/windows_x64/grpc_csharp_plugin.exe",
+        "tools/windows_x64/protoc.exe",
+        "tools/windows_x86/grpc_csharp_plugin.exe",
+        "tools/windows_x86/protoc.exe"
+      ]
+    },
+    "MassTransit/8.0.1": {
+      "sha512": "Koer7BpQ8RGwJCh4twmJaflawIjw+SETUpofssaFmgmmx8ZHDYbalYJebXYHwU69qYT4y0vXR43/GGvtHw8TNw==",
+      "type": "package",
+      "path": "masstransit/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/netstandard2.0/MassTransit.dll",
-        "lib/netstandard2.1/MassTransit.dll",
-        "masstransit.8.1.0.nupkg.sha512",
+        "masstransit.8.0.1.nupkg.sha512",
         "masstransit.nuspec",
         "mt-logo-small.png"
       ]
     },
-    "MassTransit.Abstractions/8.1.0": {
-      "sha512": "sOj80wU5B0MFtlY6cdobQqqzllLGs3diAVK0fSRvfgm1q49LkxZ23JqDyfb2AthVBLyzYsi78I/iKK3O3GRLQA==",
+    "MassTransit.Abstractions/8.0.1": {
+      "sha512": "SKf8eGXkZUHoka3vX/unORfT8gchuEcWDad/aT0vg0rgBEAj+8/ed7ldpf04oQdYqptiB+JF/cfDAXRX5bFbdw==",
       "type": "package",
-      "path": "masstransit.abstractions/8.1.0",
+      "path": "masstransit.abstractions/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "NuGet.README.md",
-        "lib/net462/MassTransit.Abstractions.dll",
-        "lib/net6.0/MassTransit.Abstractions.dll",
-        "lib/net7.0/MassTransit.Abstractions.dll",
         "lib/netstandard2.0/MassTransit.Abstractions.dll",
-        "lib/netstandard2.1/MassTransit.Abstractions.dll",
-        "masstransit.abstractions.8.1.0.nupkg.sha512",
+        "masstransit.abstractions.8.0.1.nupkg.sha512",
         "masstransit.abstractions.nuspec",
         "mt-logo-small.png"
       ]
     },
-    "MassTransit.RabbitMQ/8.1.0": {
-      "sha512": "kjKsN0f+TjmxIDlfxkyvhNcE9oXhBRZwmZ8gWcR1WRR4fNlSYM1331bGVquBTkKNynWUh9Le2wF5XctPHCcjvg==",
+    "MassTransit.RabbitMQ/8.0.1": {
+      "sha512": "AffOkIdy0R2U90x2dMfVq1Of9vGWo/pX76AQ2CcOqPtC2JyWG5imTcr/TJNEo/lxH+m42Y+9n3kYhdPEfj4X6A==",
       "type": "package",
-      "path": "masstransit.rabbitmq/8.1.0",
+      "path": "masstransit.rabbitmq/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "NuGet.README.md",
-        "lib/net462/MassTransit.RabbitMqTransport.dll",
-        "lib/net6.0/MassTransit.RabbitMqTransport.dll",
-        "lib/net7.0/MassTransit.RabbitMqTransport.dll",
         "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll",
-        "lib/netstandard2.1/MassTransit.RabbitMqTransport.dll",
-        "masstransit.rabbitmq.8.1.0.nupkg.sha512",
+        "masstransit.rabbitmq.8.0.1.nupkg.sha512",
         "masstransit.rabbitmq.nuspec",
         "mt-logo-small.png"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.3": {
-      "sha512": "TBDs8e9y2vJHp14EwNfnIZUNrm6siw8PAAU5laOrYFuGgRxx8oCdxZyfTgp1Oy/icUk9h/XtpYBHPnXIG0f2/g==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.0": {
+      "sha512": "0BgDfT1GoZnzjJOBwx5vFMK5JtqsTEas9pCEwd1/KKxNUAqFmreN60WeUoF+CsmSd9tOQuqWedvdBo/QqHuNTQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/10.0.3",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -392,25 +555,26 @@
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
-        "microsoft.aspnetcore.authentication.jwtbearer.10.0.3.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.10.0.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.OpenApi/10.0.0": {
-      "sha512": "0aqIF1t+sA2T62LIeMtXGSiaV7keGQaJnvwwmu+htQdjCaKYARfXAeqp4nHH9y2etpilyZ/tnQzZg4Ilmo/c4Q==",
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.openapi/10.0.0",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "PACKAGE.md",
+        "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/Microsoft.AspNetCore.OpenApi.SourceGenerators.dll",
-        "build/Microsoft.AspNetCore.OpenApi.targets",
-        "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
-        "microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
-        "microsoft.aspnetcore.openapi.nuspec"
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Microsoft.IdentityModel.Abstractions/8.0.1": {
@@ -515,22 +679,6 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.OpenApi/2.0.0": {
-      "sha512": "GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
-      "type": "package",
-      "path": "microsoft.openapi/2.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net8.0/Microsoft.OpenApi.dll",
-        "lib/net8.0/Microsoft.OpenApi.pdb",
-        "lib/netstandard2.0/Microsoft.OpenApi.dll",
-        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
-        "microsoft.openapi.2.0.0.nupkg.sha512",
-        "microsoft.openapi.nuspec"
-      ]
-    },
     "MongoDB.Bson/3.2.0": {
       "sha512": "Lkown45o2rXhFRwkpOCRwy329kqjRuJVVGgVoJKXE8STkqB/msrMXk+4geYYUvykOy/zvGY+ETKbWfJFYP+3gA==",
       "type": "package",
@@ -577,17 +725,17 @@
         "mongodb.entities.nuspec"
       ]
     },
-    "RabbitMQ.Client/6.5.0": {
-      "sha512": "9hY5HiWPtCla1/l0WmXmLnqoX7iKE3neBQUWnetIJrRpOvTbO//XQfQDh++xgHCshL40Kv/6bR0HDkmJz46twg==",
+    "RabbitMQ.Client/6.2.4": {
+      "sha512": "ttM7F+Ymb00EyQ25UCC44djr5GN/+cZNey2B3xD6JdJQQx7UcCtHdKBCE09zcmWuB+Afp07tFzetE14l/U8xQw==",
       "type": "package",
-      "path": "rabbitmq.client/6.5.0",
+      "path": "rabbitmq.client/6.2.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
         "lib/net461/RabbitMQ.Client.dll",
         "lib/netstandard2.0/RabbitMQ.Client.dll",
-        "rabbitmq.client.6.5.0.nupkg.sha512",
+        "rabbitmq.client.6.2.4.nupkg.sha512",
         "rabbitmq.client.nuspec"
       ]
     },
@@ -666,11 +814,13 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Contracts >= 1.0.0",
-      "MassTransit.RabbitMQ >= 8.1.0",
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.3",
-      "Microsoft.AspNetCore.OpenApi >= 10.0.0",
+      "Google.Protobuf >= 3.34.1",
+      "Grpc.Net.Client >= 2.76.0",
+      "Grpc.Tools >= 2.80.0",
+      "MassTransit.RabbitMQ >= 8.0.1",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.0",
       "MongoDB.Entities >= 24.1.1"
     ]
   },
@@ -723,17 +873,27 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
-            "version": "[12.0.1, )"
+            "version": "[12.0.0, )"
+          },
+          "Google.Protobuf": {
+            "target": "Package",
+            "version": "[3.34.1, )"
+          },
+          "Grpc.Net.Client": {
+            "target": "Package",
+            "version": "[2.76.0, )"
+          },
+          "Grpc.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.80.0, )"
           },
           "MassTransit.RabbitMQ": {
             "target": "Package",
-            "version": "[8.1.0, )"
+            "version": "[8.0.1, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
-            "target": "Package",
-            "version": "[10.0.3, )"
-          },
-          "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[10.0.0, )"
           },
@@ -1184,7 +1344,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
+      "message": "Package 'AutoMapper' 12.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net10.0"

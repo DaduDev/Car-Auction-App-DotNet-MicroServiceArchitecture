@@ -1,9 +1,8 @@
-using MassTransit;
 using Contracts;
-using BiddingService.Models;
+using MassTransit;
 using MongoDB.Entities;
 
-namespace BiddingService.Consumers;
+namespace BiddingService;
 
 public class AuctionCreatedConsumer : IConsumer<AuctionCreated>
 {
@@ -14,8 +13,7 @@ public class AuctionCreatedConsumer : IConsumer<AuctionCreated>
             ID = context.Message.Id.ToString(),
             Seller = context.Message.Seller,
             AuctionEnd = context.Message.AuctionEnd,
-            ReservePrice = context.Message.ReservePrice,
-            Finished = context.Message.AuctionEnd < DateTime.UtcNow
+            ReservePrice = context.Message.ReservePrice
         };
 
         await auction.SaveAsync();

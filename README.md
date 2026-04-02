@@ -1,4 +1,4 @@
-# CarAuction
+# Car Auction
 
 ## 🚗 Car Auction Platform - Microservices Architecture
 
